@@ -28,6 +28,11 @@ export default function App() {
   const [isSidebarOpenMobile, setIsSidebarOpenMobile] = useState(false);
   const [isCoachOpenMobile, setIsCoachOpenMobile] = useState(false);
 
+  // True when running inside the installed PWA (Android "Install app" / iOS home screen).
+  const isStandaloneApp =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(display-mode: standalone)').matches;
+
   // Theme state: 'dark' | 'light' with localStorage persistence
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     try {
@@ -478,6 +483,19 @@ export default function App() {
             <div className="text-xs px-2 py-0.5 rounded-md bg-[#28292e] text-[#b4b7c6] border border-[#373841] font-mono">
               Score: <strong className="text-white">{todayScore}%</strong>
             </div>
+            {!isStandaloneApp && (
+              <a
+                href="./install/"
+                target="_blank"
+                rel="noopener"
+                className="px-2.5 py-1.5 rounded-lg bg-[#202023] border border-[#2e2f34] text-[#b4b7c6] text-xs font-semibold flex items-center gap-1 transition-colors active:scale-95"
+                title="Download DisciplineAI as an app"
+                aria-label="Install DisciplineAI as an app"
+              >
+                <span className="material-symbols-outlined text-[16px]">download</span>
+                <span>App</span>
+              </a>
+            )}
             <button
               id="open-coach-mobile-btn"
               onClick={() => setIsCoachOpenMobile(!isCoachOpenMobile)}

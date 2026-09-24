@@ -8,7 +8,7 @@ import QRCode from 'qrcode';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outFile = path.resolve(__dirname, '..', 'public', 'install', 'qr-app.png');
 
-const url = 'https://hiteshkumar-khatri.github.io/disciplineai/';
+const url = 'https://hiteshkumar-khatri.github.io/disciplineai/install/';
 const buffer = await QRCode.toBuffer(url, {
   type: 'png',
   width: 512,

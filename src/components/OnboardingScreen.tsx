@@ -124,6 +124,12 @@ export const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ theme, onCom
           <p className="text-center text-[11px]" style={{ color: faintColor }}>
             You can change either anytime in Settings.
           </p>
+          <p className="text-center text-[11px] mt-1" style={{ color: faintColor }}>
+            📱 Want it installed on your phone like an app?{' '}
+            <a href="./install/" target="_blank" rel="noopener" style={{ color: '#7c6af7', fontWeight: 600 }}>
+              Get the app
+            </a>
+          </p>
         </form>
       </div>
     </div>
