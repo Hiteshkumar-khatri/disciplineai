@@ -36,6 +36,25 @@ npm run build   # outputs a static site into ./dist
 The build uses relative paths, so `dist/index.html` can be opened directly from
 disk or hosted on any static server / subpath.
 
+## 📱 Use it on your phone (installable app)
+
+The app is a **Progressive Web App** — no app store needed. Open the live URL on
+your phone and install it to the home screen like a native app:
+
+- **Android (Chrome):** open the app → tap **⋮ (menu)** → **Install app** → *Install*.
+  It appears in your app drawer with the DisciplineAI ⚡ icon and runs full-screen.
+- **iPhone (Safari):** open the app → tap **Share (⤴)** → **Add to Home Screen** →
+  **Add**. A launcher icon is added to your home screen.
+- **Any browser:** bookmark it or use *Add to Home Screen* — the app is fully
+  mobile-responsive (sidebar & coach panel slide in on small screens).
+
+> 📵 **Offline:** once opened once, the app is cached by your browser and can
+> still start when you have no connection.
+
+> 🗄️ **Data note:** progress (tasks, streaks, chat) is saved per-device in the
+> browser's localStorage. Phone and computer data are separate — no account or
+> cloud is used.
+
 ## Using the AI Coach
 
 1. Open the app and paste a **Groq API key** in Settings (or during onboarding).

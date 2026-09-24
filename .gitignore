@@ -10,3 +10,6 @@ coverage/
 # Local dev / migration scratch files
 .migrate_*.mjs
 .tmp_*.mjs
+
+# Release artifacts (built for GitHub Releases only)
+disciplineai-v*.zip
