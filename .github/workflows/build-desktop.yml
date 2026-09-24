@@ -106,10 +106,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          VERSION=$(node -p "require('./package.json').version")
-          TAG="v${VERSION}"
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then TAG="$GITHUB_REF_NAME"; else TAG="v1.2.0"; fi
+          VERSION="${TAG#v}"
           gh release create "${TAG}" \
-            --title "DisciplineAI v${VERSION}" \
+            --title "DisciplineAI ${VERSION}" \
             --notes "One-click desktop installers for Windows, macOS and Linux." \
             || true
           gh release upload "${TAG}" artifacts/* --clobber || true
