@@ -11,10 +11,24 @@ and performance analytics — 100% client-side, no server required.
 - Light / dark theme, sound feedback, auto 11:59 PM daily audit report
 - All data stays in **your browser** (localStorage) — nothing is uploaded
 
-> 🔗 **Live app:** hosted on GitHub Pages.
-> 📦 **Download:** grab the offline build from the [Releases](https://github.com/Hiteshkumar-khatri/disciplineai/releases) page.
+> 🔗 **Live app:** https://hiteshkumar-khatri.github.io/disciplineai/
+> 📦 **One-click download:** native desktop installers for Windows (.exe), macOS (.dmg) and Linux (.AppImage) — see **⬇️ Download the app** below.
 
 ---
+
+## ⬇️ Download the app (one click)
+
+Get the **native desktop app** — a single file, no browser, no extracting:
+
+1. Open the **Releases** page: → **https://github.com/Hiteshkumar-khatri/disciplineai/releases**
+2. Under the latest release, click **Assets**
+3. Download the file for your operating system:
+   - **Windows** → `DisciplineAI-Setup-…exe` (double-click to install) or `DisciplineAI‑…‑portable.exe` (double-click to run)
+   - **macOS** → `DisciplineAI-….dmg`
+   - **Linux** → `DisciplineAI-….AppImage`
+4. Done — it opens like a normal app. Your data stays on your own device.
+
+> The installers are built automatically by GitHub Actions on every new version tag.
 
 ## Run Locally
 

@@ -1,15 +1,20 @@
 {
   "name": "disciplineai",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "AI-powered daily discipline tracker with accountability coaching, streak heatmaps, and performance analytics.",
   "type": "module",
+  "main": "electron/main.cjs",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
-    "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "clean": "rm -rf dist release",
+    "lint": "tsc --noEmit",
+    "app:start": "electron .",
+    "dist:win": "vite build && electron-builder --win",
+    "dist:mac": "vite build && electron-builder --mac",
+    "dist:linux": "vite build && electron-builder --linux"
   },
   "keywords": [
     "discipline",
@@ -20,6 +25,54 @@
     "accountability"
   ],
   "license": "MIT",
+  "build": {
+    "appId": "com.disciplineai.app",
+    "productName": "DisciplineAI",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**",
+      "electron/**",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "electron/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "deleteAppDataOnUninstall": true,
+      "shortcutName": "DisciplineAI"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "electron/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "electron/icon.png",
+      "category": "Utility"
+    }
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
     "@vitejs/plugin-react": "^5.0.4",
@@ -31,6 +84,8 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.4.21",
+    "electron": "^44.4.5",
+    "electron-builder": "^26.15.3",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",

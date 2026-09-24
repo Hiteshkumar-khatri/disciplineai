@@ -13,3 +13,8 @@ coverage/
 
 # Release artifacts (built for GitHub Releases only)
 disciplineai-v*.zip
+
+# Local caches & desktop build output
+.npm-cache/
+.electron-cache/
+release/

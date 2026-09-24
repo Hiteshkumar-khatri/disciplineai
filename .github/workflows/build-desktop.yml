@@ -1,0 +1,117 @@
+name: Build Desktop Apps
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Windows installer (NSIS + portable)
+        run: npm run dist:win
+
+      - name: Upload Windows artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: disciplineai-windows
+          path: |
+            release/*.exe
+            release/*.yml
+          if-no-files-found: error
+
+  mac:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build macOS app (dmg)
+        run: npm run dist:mac
+
+      - name: Upload macOS artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: disciplineai-macos
+          path: |
+            release/*.dmg
+            release/*.zip
+          if-no-files-found: error
+
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Linux app (AppImage)
+        run: npm run dist:linux
+
+      - name: Upload Linux artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: disciplineai-linux
+          path: |
+            release/*.AppImage
+            release/*.yml
+          if-no-files-found: error
+
+  release:
+    needs: [windows, mac, linux]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+
+      - name: Publish to GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v${VERSION}"
+          gh release create "${TAG}" \
+            --title "DisciplineAI v${VERSION}" \
+            --notes "One-click desktop installers for Windows, macOS and Linux." \
+            || true
+          gh release upload "${TAG}" artifacts/* --clobber || true
+          echo "=== Release assets for ${TAG} ==="
+          gh release view "${TAG}" --json assets -q '.assets[].name'
