@@ -1,0 +1,9 @@
+{
+  "appId": "com.disciplineai.app",
+  "appName": "DisciplineAI",
+  "webDir": "dist",
+  "outputDir": "android",
+  "android": {
+    "androidMinSdkVersion": 21
+  }
+}

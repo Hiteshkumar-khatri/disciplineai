@@ -22,11 +22,15 @@ Get the **native desktop app** — a single file, no browser, no extracting:
 
 1. Open the **Releases** page: → **https://github.com/Hiteshkumar-khatri/disciplineai/releases**
 2. Under the latest release, click **Assets**
-3. Download the file for your operating system:
+3. Download the file for your device:
+   - **Android** → `DisciplineAI-….apk` — tap the file, tap *Install* (allow apps from this source), then *Open*. It appears in your app drawer as a real installed app.
    - **Windows** → `DisciplineAI-Setup-…exe` (double-click to install) or `DisciplineAI‑…‑portable.exe` (double-click to run)
    - **macOS** → `DisciplineAI-….dmg`
    - **Linux** → `DisciplineAI-….AppImage`
 4. Done — it opens like a normal app. Your data stays on your own device.
+
+> ⚠️ **iPhone:** Apple doesn't allow installing apps from outside the App Store,
+> so on iPhone use "Add to Home Screen" instead (see the phone section below).
 
 > The installers are built automatically by GitHub Actions on every new version tag.
 

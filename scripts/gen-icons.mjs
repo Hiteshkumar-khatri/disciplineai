@@ -152,7 +152,7 @@ async function render(size) {
 }
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
-for (const size of [192, 256, 512]) {
+for (const size of [192, 256, 512, 1024]) {
   const png = await render(size);
   fs.writeFileSync(path.join(OUT_DIR, `icon-${size}.png`), png);
   console.log(`wrote public/icon-${size}.png (${png.length} bytes)`);

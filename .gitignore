@@ -18,3 +18,6 @@ disciplineai-v*.zip
 .npm-cache/
 .electron-cache/
 release/
+
+# Capacitor Android project (generated in CI by `npx cap add android`)
+android/
