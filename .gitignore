@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Local dev / migration scratch files
+.migrate_*.mjs
+.tmp_*.mjs

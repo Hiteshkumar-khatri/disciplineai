@@ -1,0 +1,544 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 0.2s smooth transition for all color, background, and border changes */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, text-decoration-color, fill, stroke;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+/* =========================================================
+   LIGHT MODE:
+   - Main background: #ffffff
+   - Sidebar background: #f5f5f5
+   - Cards background: #ffffff with border: 1px solid #e0e0e0
+   - All text: #0d0d0d (dark, readable)
+   - Muted text: #555555
+   - Card headings: #111111
+   - Progress bar track: #e0e0e0
+   - Task items background: #f9f9f9 with border: 1px solid #e5e5e5
+   - Streak calendar empty squares: #eeeeee with border: 1px solid #d0d0d0
+   - Streak calendar filled squares: #7c6af7 (keep purple)
+   - Sidebar navigation items text: #333333
+   - Active sidebar item: light purple background #ede9ff with text #5b4fcf
+   - Input fields: white background with #333 text and #ccc border
+   - All icons: #444444 in light mode
+   - Every element has explicitly defined light mode colors.
+   ========================================================= */
+html.light {
+  color-scheme: light;
+}
+
+/* 1. Main background: #ffffff & Base text: #0d0d0d */
+html.light,
+html.light body,
+html.light #discipline-app-root,
+html.light main,
+html.light #today-dashboard,
+html.light #reports-screen,
+html.light #streaks-screen,
+html.light #settings-screen {
+  background-color: #ffffff !important;
+  color: #0d0d0d !important;
+}
+
+/* 2. Sidebar background: #f5f5f5 & border: 1px solid #e0e0e0 */
+html.light #app-sidebar {
+  background-color: #f5f5f5 !important;
+  border-color: #e0e0e0 !important;
+}
+html.light #app-sidebar > div,
+html.light #app-sidebar .border-b,
+html.light #app-sidebar .border-t {
+  border-color: #e0e0e0 !important;
+}
+html.light #app-sidebar .bg-\[\#1a1a1c\],
+html.light #app-sidebar .bg-\[\#1e1e20\] {
+  background-color: #f5f5f5 !important;
+}
+html.light header.lg\:hidden {
+  background-color: #f5f5f5 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* 3. Cards background: #ffffff with border: 1px solid #e0e0e0 */
+html.light .bg-\[\#202023\],
+html.light .bg-\[\#212124\],
+html.light .bg-\[\#252529\],
+html.light .bg-\[\#1e1e20\],
+html.light .bg-\[\#1c1c1f\],
+html.light .bg-\[\#18181a\],
+html.light .bg-\[\#242427\],
+html.light .bg-\[\#242428\],
+html.light [id*="card"],
+html.light #discipline-score-card,
+html.light #streak-calendar-card,
+html.light #weekly-chart-card,
+html.light #sidebar-streak-box,
+html.light #theme-mode-toggle-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+/* 4. All text: #0d0d0d (dark, readable) */
+html.light .text-white,
+html.light .text-\[\#ececec\],
+html.light .text-\[\#ededed\],
+html.light .text-\[\#e4e5ee\],
+html.light .text-zinc-100,
+html.light .text-zinc-200,
+html.light .text-zinc-300 {
+  color: #0d0d0d !important;
+}
+
+/* 5. Muted text: #555555 */
+html.light .text-\[\#8e8ea0\],
+html.light .text-\[\#9ca3af\],
+html.light .text-\[\#a0a2b2\],
+html.light .text-\[\#b0b2be\],
+html.light .text-\[\#b4b7c4\],
+html.light .text-\[\#b8b9c6\],
+html.light .text-\[\#6c6d7a\],
+html.light .text-\[\#6e707e\],
+html.light .text-\[\#6f707f\],
+html.light .text-\[\#6f7180\],
+html.light .text-\[\#747582\],
+html.light .text-\[\#717280\],
+html.light .text-\[\#717382\],
+html.light .text-\[\#767784\],
+html.light .text-\[\#7f8190\],
+html.light .text-\[\#565763\],
+html.light .text-\[\#686976\],
+html.light .text-\[\#666774\],
+html.light .text-zinc-400,
+html.light .text-zinc-500,
+html.light .muted-text {
+  color: #555555 !important;
+}
+
+/* 6. Card headings: #111111 */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light .text-2xl.font-bold,
+html.light .text-3xl.font-bold,
+html.light .text-base.font-bold,
+html.light .text-lg.font-bold,
+html.light .text-xl.font-bold,
+html.light .text-4xl.font-extrabold,
+html.light .text-5xl.font-extrabold,
+html.light .uppercase.tracking-wider {
+  color: #111111 !important;
+}
+
+/* Preserve accent purple */
+html.light .text-\[\#7c6af7\],
+html.light h1 .text-\[\#7c6af7\],
+html.light h2 .text-\[\#7c6af7\],
+html.light .text-base.font-bold .text-\[\#7c6af7\] {
+  color: #7c6af7 !important;
+}
+
+/* 7. Progress bar track: #e0e0e0 */
+html.light .progress-bar-track,
+html.light .progress-track,
+html.light .bg-\[\#171718\],
+html.light .bg-\[\#1b1b1c\],
+html.light [class*="rounded-full"][class*="h-1.5"],
+html.light [class*="rounded-full"][class*="h-2.5"] {
+  background-color: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* 8. Task items background: #f9f9f9 with border: 1px solid #e5e5e5 */
+html.light .task-item-card,
+html.light [id*="task-card-"] {
+  background-color: #f9f9f9 !important;
+  border: 1px solid #e5e5e5 !important;
+}
+html.light .task-item-card:hover,
+html.light [id*="task-card-"]:hover {
+  border-color: #d0d0d0 !important;
+}
+html.light .task-item-name {
+  color: #0d0d0d !important;
+}
+html.light .task-item-name.line-through,
+html.light [id*="task-card-"] .line-through {
+  color: #888888 !important;
+}
+html.light .task-item-checkbox:not(.bg-\[\#7c6af7\]),
+html.light [id*="task-toggle-"]:not(.bg-\[\#7c6af7\]) {
+  background-color: #ffffff !important;
+  border: 1px solid #cccccc !important;
+}
+html.light .task-item-checkbox.bg-\[\#7c6af7\],
+html.light [id*="task-toggle-"].bg-\[\#7c6af7\] {
+  background-color: #7c6af7 !important;
+  border: 1px solid #7c6af7 !important;
+  color: #ffffff !important;
+}
+html.light .task-action-btn:hover {
+  background-color: #e8e8e8 !important;
+}
+
+/* 9. Streak calendar empty squares: #eeeeee with border: 1px solid #d0d0d0 */
+html.light .streak-empty-square,
+html.light .heatmap-empty-cell,
+html.light .streak-day-square:not(.streak-filled-square):not(.bg-\[\#7c6af7\]) {
+  background-color: #eeeeee !important;
+  border: 1px solid #d0d0d0 !important;
+  color: #555555 !important;
+}
+html.light .streak-day-container {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+}
+html.light .streak-day-name {
+  color: #555555 !important;
+}
+html.light .streak-day-num {
+  color: #111111 !important;
+}
+
+/* 10. Streak calendar filled squares: #7c6af7 (keep purple) */
+html.light .streak-filled-square,
+html.light .heatmap-filled-cell,
+html.light .streak-day-square.streak-filled-square,
+html.light .streak-day-square.bg-\[\#7c6af7\] {
+  background-color: #7c6af7 !important;
+  border: 1px solid #6b58eb !important;
+  color: #ffffff !important;
+}
+html.light .streak-filled-square .material-symbols-outlined,
+html.light .streak-day-square.bg-\[\#7c6af7\] .material-symbols-outlined {
+  color: #ffffff !important;
+}
+
+/* 11. Sidebar navigation items text: #333333 */
+html.light #app-sidebar button[id*="nav-btn-"]:not(.bg-\[\#ede9ff\]):not([class*="text-\[\#5b4fcf\]"]) {
+  color: #333333 !important;
+}
+html.light #app-sidebar button[id*="nav-btn-"]:hover:not(.bg-\[\#ede9ff\]):not([class*="text-\[\#5b4fcf\]"]) {
+  background-color: #ebebeb !important;
+  color: #0d0d0d !important;
+}
+
+/* 12. Active sidebar item: light purple background #ede9ff with text #5b4fcf */
+html.light #app-sidebar button[id*="nav-btn-"].bg-\[\#ede9ff\],
+html.light #app-sidebar button[id*="nav-btn-"][class*="text-\[\#5b4fcf\]"],
+html.light #app-sidebar button[id*="nav-btn-"].active-nav {
+  background-color: #ede9ff !important;
+  color: #5b4fcf !important;
+  border-color: transparent !important;
+}
+html.light #app-sidebar button[id*="nav-btn-"].bg-\[\#ede9ff\] .material-symbols-outlined,
+html.light #app-sidebar button[id*="nav-btn-"][class*="text-\[\#5b4fcf\]"] .material-symbols-outlined {
+  color: #5b4fcf !important;
+}
+
+/* 13. Input fields: white background with #333 text and #ccc border */
+html.light input[type="text"],
+html.light input[type="password"],
+html.light input[type="email"],
+html.light input[type="number"],
+html.light textarea,
+html.light select,
+html.light #coach-chat-input,
+html.light #settings-name-input,
+html.light #settings-api-key-input {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  border: 1px solid #cccccc !important;
+}
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #888888 !important;
+}
+html.light input:focus,
+html.light textarea:focus,
+html.light select:focus {
+  border-color: #7c6af7 !important;
+  outline: none !important;
+}
+
+/* 14. All icons: #444444 in light mode */
+html.light .material-symbols-outlined {
+  color: #444444;
+}
+
+/* Explicit exceptions for highlight icons */
+html.light .streak-filled-square .material-symbols-outlined,
+html.light .task-item-checkbox .material-symbols-outlined,
+html.light button.bg-\[\#7c6af7\] .material-symbols-outlined,
+html.light .bg-\[\#7c6af7\] .material-symbols-outlined,
+html.light .text-white.material-symbols-outlined {
+  color: #ffffff !important;
+}
+html.light #app-sidebar [id*="nav-btn-"][class*="text-\[\#5b4fcf\]"] .material-symbols-outlined,
+html.light #app-sidebar [id*="nav-btn-"].bg-\[\#ede9ff\] .material-symbols-outlined {
+  color: #5b4fcf !important;
+}
+html.light .material-symbols-outlined.text-\[\#7c6af7\] {
+  color: #7c6af7 !important;
+}
+html.light .material-symbols-outlined.text-\[\#e58e26\] {
+  color: #e58e26 !important;
+}
+html.light .material-symbols-outlined.text-emerald-400 {
+  color: #059669 !important;
+}
+html.light .material-symbols-outlined.text-rose-400 {
+  color: #dc2626 !important;
+}
+html.light .material-symbols-outlined.text-amber-500 {
+  color: #d97706 !important;
+}
+
+/* 15. Right Side AI Coach Panel in Light Mode */
+html.light #ai-coach-panel {
+  background-color: #f5f5f5 !important;
+  border-color: #e0e0e0 !important;
+}
+html.light #ai-coach-panel > div:first-child,
+html.light #ai-coach-panel .bg-\[\#1f1f22\] {
+  background-color: #f0f0f0 !important;
+  border-color: #e0e0e0 !important;
+}
+html.light #ai-coach-panel .bg-\[\#1a1a1c\] {
+  background-color: #f5f5f5 !important;
+  border-color: #e0e0e0 !important;
+}
+html.light #ai-coach-panel .bg-\[\#242429\] {
+  background-color: #f0f0f0 !important;
+  border-color: #e0e0e0 !important;
+}
+html.light #ai-coach-panel .bg-\[\#26262a\],
+html.light #ai-coach-panel .bg-\[\#25252b\] {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #0d0d0d !important;
+}
+html.light #ai-coach-panel [id*="quick-chip-"] {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #333333 !important;
+}
+html.light #ai-coach-panel [id*="quick-chip-"]:hover {
+  background-color: #ede9ff !important;
+  color: #5b4fcf !important;
+  border-color: #d4cbfc !important;
+}
+
+/* 16. Modals in Light Mode */
+html.light #add-task-modal,
+html.light #confirm-reset-modal {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #0d0d0d !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+html.light #add-task-modal label {
+  color: #333333 !important;
+}
+
+/* 17. Borders & Dividers in Light Mode */
+html.light .border-\[\#2d2e33\],
+html.light .border-\[\#2e2f34\],
+html.light .border-\[\#33343c\],
+html.light .border-\[\#35363e\],
+html.light .border-\[\#383944\],
+html.light .border-\[\#3a3b44\],
+html.light .border-\[\#34353d\],
+html.light .border-\[\#2b2c31\],
+html.light .border-\[\#2a2b30\],
+html.light .border-\[\#292a31\],
+html.light .border-\[\#2d2e36\],
+html.light .border-\[\#2b2c35\],
+html.light .border-\[\#373843\],
+html.light .divide-\[\#2a2b30\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e0e0e0 !important;
+}
+
+/* 18. Scrollbars in Light Mode */
+html.light ::-webkit-scrollbar-thumb {
+  background: #d4d4dc;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #b8b8c2;
+}
+
+/* 19. Remaining light-mode fixes — every dark surface has an explicit light
+   counterpart and every low-contrast light text is darkened for readability. */
+
+/* 19a. Mobile top app bar score chip + coach chat input + "0/x completed" pill */
+html.light .bg-\[\#28292e\] {
+  background-color: #f0f0f0 !important;
+}
+html.light .bg-\[\#29292e\] {
+  background-color: #ffffff !important;
+}
+html.light header button:hover {
+  background-color: #ececec !important;
+}
+
+/* 19b. Modal cancel buttons */
+html.light .bg-\[\#2a2b30\] {
+  background-color: #f2f2f2 !important;
+}
+html.light .bg-\[\#2b2c33\] {
+  background-color: #f2f2f2 !important;
+}
+html.light .hover\:bg-\[\#35363d\]:hover {
+  background-color: #e8e8e8 !important;
+}
+
+/* 19c. Today dashboard "day streak" pill */
+html.light .bg-\[\#29241b\] {
+  background-color: #fdf3e7 !important;
+}
+html.light .border-\[\#443825\] {
+  border-color: #e8c99a !important;
+}
+
+/* 19d. Settings "groq-api" badge */
+html.light .bg-\[\#272635\] {
+  background-color: #ede9ff !important;
+}
+html.light .border-\[\#3f3b5c\] {
+  border-color: #d3c9f2 !important;
+}
+
+/* 19e. Streaks screen operational callout + code chip */
+html.light #streaks-screen .bg-\[\#272633\] {
+  background-color: #f5f0ff !important;
+}
+html.light #streaks-screen .border-\[\#3e3b56\] {
+  border-color: #d3c9f2 !important;
+}
+html.light .text-\[\#c6c3dc\],
+html.light .text-\[\#b0adc8\] {
+  color: #555555 !important;
+}
+html.light .bg-\[\#1d1b29\] {
+  background-color: #f2f2f2 !important;
+}
+html.light .text-\[\#a294fc\] {
+  color: #7c6af7 !important;
+}
+
+/* 19f. Reports weekly chart: below-target bars + hover tooltip */
+html.light .bg-\[\#3c3d47\] {
+  background-color: #d4d4dc !important;
+}
+html.light .bg-\[\#141416\] {
+  background-color: #ffffff !important;
+}
+html.light .border-\[\#3e404b\] {
+  border-color: #d0d0d0 !important;
+}
+
+/* 19g. Streaks heatmap cells + legend swatches */
+html.light #streaks-screen .bg-\[\#222226\],
+html.light #streaks-screen .border-\[\#2c2d33\] {
+  background-color: #eeeeee !important;
+  border-color: #d0d0d0 !important;
+}
+html.light #streaks-screen .bg-\[\#3b3427\],
+html.light #streaks-screen .border-\[\#4c3f2b\] {
+  background-color: #f6e3c5 !important;
+  border-color: #e0c9a5 !important;
+}
+html.light #streaks-screen .bg-\[\#4b3c5a\],
+html.light #streaks-screen .border-\[\#5e4875\] {
+  background-color: #e6def5 !important;
+  border-color: #c9bce8 !important;
+}
+html.light #streaks-screen .bg-\[\#9888fd\],
+html.light #streaks-screen .border-\[\#b4a8fe\] {
+  background-color: #7c6af7 !important;
+  border-color: #8e7ffa !important;
+}
+
+/* 19h. AI coach panel hover states */
+html.light #ai-coach-panel .hover\:bg-\[\#2c2d33\]:hover {
+  background-color: #e8e8e8 !important;
+}
+
+/* 19i. Task row action buttons */
+html.light [id*="task-miss-btn-"]:hover {
+  background-color: #fdecea !important;
+}
+html.light [id*="task-delete-btn-"]:hover {
+  background-color: #e8e8e8 !important;
+}
+
+/* 19j. Low-contrast text readability in light mode */
+html.light .text-\[\#b8bac7\],
+html.light .text-\[\#555663\],
+html.light .text-\[\#565763\],
+html.light .text-\[\#636470\] {
+  color: #555555 !important;
+}
+html.light .text-\[\#e58e26\] {
+  color: #d97706 !important;
+}
+html.light .text-rose-300,
+html.light .text-rose-400 {
+  color: #dc2626 !important;
+}
+html.light .text-emerald-300 {
+  color: #059669 !important;
+}
+html.light .text-amber-400 {
+  color: #d97706 !important;
+}
+html.light .text-blue-400 {
+  color: #2563eb !important;
+}
+html.light .text-teal-400 {
+  color: #0f766e !important;
+}
+
+.material-symbols-outlined {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Subtle scrollbars for ChatGPT aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2f38;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #454754;
+}

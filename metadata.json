@@ -1,0 +1,6 @@
+{
+  "name": "DisciplineAI",
+  "description": "AI-powered daily discipline tracker with accountability coaching, streak heatmaps, and performance analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
