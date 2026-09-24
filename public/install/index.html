@@ -11,19 +11,19 @@
       body {
         margin: 0; background: #171717; color: #ececec; min-height: 100vh;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-        display: flex; flex-direction: column; align-items: center; padding: 20px 16px 40px;
+        display: flex; flex-direction: column; align-items: center; padding: 22px 16px 44px;
       }
       .logo { width: 64px; height: 64px; border-radius: 16px; background: #7c6af7;
         display: flex; align-items: center; justify-content: center; font-size: 30px; color: #fff; margin-bottom: 8px; }
-      h1 { font-size: 21px; margin: 0 0 4px; text-align: center; }
-      p.sub { color: #9ca3af; font-size: 14px; margin: 0 0 20px; text-align: center; }
+      h1 { font-size: 22px; margin: 0 0 4px; text-align: center; }
+      p.sub { color: #9ca3af; font-size: 14px; margin: 0 0 22px; text-align: center; }
       .card { background: #212124; border: 1px solid #2e2f34; border-radius: 14px;
         padding: 18px; width: 100%; max-width: 380px; margin-bottom: 14px; }
       .os { color: #8e8ea0; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; }
-      hr.bar { height: 1px; background: #2e2f34; border: 0; margin: 3px 0 14px; }
+      hr.bar { height: 1px; background: #2e2f34; border: 0; margin: 3px 0 12px; }
       a.dl {
         display: block; width: 100%; padding: 15px; border-radius: 12px; text-decoration: none;
-        background: #7c6af7; color: #fff; font-size: 16px; font-weight: 800; text-align: center; margin-bottom: 10px;
+        background: #7c6af7; color: #fff; font-size: 16px; font-weight: 800; text-align: center;
       }
       a.open {
         display: block; width: 100%; padding: 11px; border-radius: 11px; text-decoration: none;
@@ -35,60 +35,50 @@
       .step p { margin: 0; font-size: 13.5px; line-height: 1.45; color: #dcdce4; }
       .step b { color: #fff; }
       .note { font-size: 12px; color: #9ca3af; line-height: 1.5; }
-      .qr-wrap { width: 176px; height: 176px; border-radius: 12px; background: #fff; display: flex; margin: 0 auto; }
-      .qr-wrap img { width: 100%; height: 100%; }
-      .hide { display: none !important; }
+      code.tag { display: inline-block; background: #26262a; border: 1px solid #34353c; color: #c6c3dc;
+        padding: 1px 7px; border-radius: 6px; font-size: 12px; font-family: ui-monospace, monospace;
+        word-break: break-all; }
     </style>
   </head>
   <body>
     <div class="logo">⚡</div>
     <h1>Install DisciplineAI</h1>
-    <p class="sub">Get it as an installed app — or just use it in your browser.</p>
+    <p class="sub">Tap one link — no QR, no app store needed.</p>
 
-    <!-- ANDROID (default hidden, JS shows it) -->
-    <div class="card hide" id="android-card">
+    <div class="card">
       <div class="os">📱 Android</div>
       <hr class="bar" />
-      <a class="dl" id="apk-btn" href="https://github.com/Hiteshkumar-khatri/disciplineai/releases/download/v1.2.0/DisciplineAI-1.2.0.apk">⬇️ Download DisciplineAI (.apk)</a>
-      <div class="step"><div class="num">1</div><p>Tap the button above (or skip: open this page on your <b>computer</b> and scan the QR below).</p></div>
-      <div class="step"><div class="num">2</div><p>Tap the downloaded <b>DisciplineAI-1.2.0.apk</b> file.</p></div>
-      <div class="step"><div class="num">3</div><p>Android will say <i>"not allowed to install unknown apps from this source"</i> → tap <b>⚙️ Settings</b> → <b>Allow apps from this source</b> → go <b>Back</b>.</p></div>
-      <div class="step"><div class="num">4</div><p>Tap <b>Install</b> → <b>Open</b>. The ⚡ icon now lives in your app drawer, like a real app.</p></div>
-      <a class="open" href="https://hiteshkumar-khatri.github.io/disciplineai/" style="margin-top:14px">🌐 Just want to use it now? Open web app</a>
+      <a class="dl" href="https://github.com/Hiteshkumar-khatri/disciplineai/releases/download/v1.2.0/DisciplineAI-1.2.0.apk">
+        ⬇️ Download DisciplineAI (.apk · 3&nbsp;MB)
+      </a>
+      <div class="step"><div class="num">1</div><p>Tap the purple button above — the <b>DisciplineAI-1.2.0.apk</b> file downloads to your phone.</p></div>
+      <div class="step"><div class="num">2</div><p>Tap the downloaded file. If Android says <i>"not allowed to install unknown apps from this source"</i> → tap <b>⚙️ Settings</b> → <b>Allow apps from this source</b> → <b>Back</b>.</p></div>
+      <div class="step"><div class="num">3</div><p>Tap <b>Install</b> → <b>Open</b>. The ⚡ icon appears in your app drawer — a real installed app.</p></div>
+      <p class="note" style="margin-top:12px;">
+        Direct link:
+        <br />
+        <code class="tag">https://github.com/Hiteshkumar-khatri/disciplineai/releases/download/v1.2.0/DisciplineAI-1.2.0.apk</code>
+      </p>
     </div>
 
-    <!-- IPHONE / OTHER -->
-    <div class="card" id="other-card">
-      <div class="os">📱 iPhone / iPad / other</div>
+    <div class="card">
+      <div class="os">📱 iPhone / iPad</div>
       <hr class="bar" />
       <p class="note">
-        <b>iPhone can’t install app files</b> — Apple only allows apps from their App Store.
-        The one-tap way on iPhone is adding it to your Home Screen (opens full-screen like an app):
+        Apple only allows apps from their App Store (no .apk files on iPhone). The one-tap way is adding it to your Home Screen — it opens full-screen, just like an app:
       </p>
       <div class="step"><div class="num">1</div><p>Open the app: <b>https://hiteshkumar-khatri.github.io/disciplineai/</b></p></div>
       <div class="step"><div class="num">2</div><p>In Safari tap <b>Share (⤴)</b> → <b>Add to Home Screen</b> → <b>Add</b>.</p></div>
-      <div class="step"><div class="num">3</div><p>The ⚡ icon lands on your Home Screen — tap it anytime to open the app full-screen.</p></div>
-      <a class="open" href="https://hiteshkumar-khatri.github.io/disciplineai/" style="margin-top:14px">🌐 Open the app now</a>
+      <a class="open" href="https://hiteshkumar-khatri.github.io/disciplineai/" style="margin-top:12px">🌐 Open the app now</a>
     </div>
 
-    <!-- QR to share/scan from a computer -->
     <div class="card">
-      <div class="os">📲 On your computer? Scan this</div>
+      <div class="os">🌐 Any device</div>
       <hr class="bar" />
-      <div class="qr-wrap"><img src="./qr-app.png" alt="QR code to this install page" /></div>
-      <p class="note" style="text-align:center; margin-top:8px;">Scanning opens this page on your phone — then tap the big download button (Android) or follow the iPhone steps.</p>
+      <a class="open" href="https://hiteshkumar-khatri.github.io/disciplineai/">Use DisciplineAI in your browser</a>
+      <p class="note" style="margin-top:10px;">
+        All data stays on your device (localStorage). It also works offline after first use.
+      </p>
     </div>
-
-    <script>
-      var isAndroid = /Android/i.test(navigator.userAgent);
-      var isStandalone = typeof window.matchMedia === 'function' &&
-        window.matchMedia('(display-mode: standalone)').matches;
-      if (isAndroid && !isStandalone) {
-        document.getElementById('android-card').classList.remove('hide');
-        document.getElementById('other-card').classList.add('hide');
-      }
-      var qr = document.querySelector('.qr-wrap img');
-      if (isAndroid) qr.style.filter = 'none';
-    </script>
   </body>
 </html>

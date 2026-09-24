@@ -61,7 +61,7 @@ your phone and install it to the home screen like a native app:
 
 - **📲 One-tap helper page:** open
   **https://hiteshkumar-khatri.github.io/disciplineai/install/** on your phone —
-  it shows an install button + QR + step-by-step instructions.
+  it shows a big **Download .apk** button (Android) and step-by-step instructions.
 - **Android (Chrome):** open the app → tap **⋮ (menu)** → **Install app** → *Install*.
   It appears in your app drawer with the DisciplineAI ⚡ icon and runs full-screen.
 - **iPhone (Safari):** open the app → tap **Share (⤴)** → **Add to Home Screen** →
