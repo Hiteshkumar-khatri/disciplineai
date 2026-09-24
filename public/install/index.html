@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Install DisciplineAI on your phone</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #171717;
+        color: #ececec;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 16px 40px;
+      }
+      .logo {
+        width: 64px; height: 64px; border-radius: 16px;
+        background: #7c6af7; display: flex; align-items: center; justify-content: center;
+        font-size: 30px; color: #fff; margin-bottom: 10px;
+      }
+      h1 { font-size: 22px; margin: 0 0 4px; }
+      p.sub { color: #9ca3af; font-size: 14px; margin: 0 0 22px; text-align: center; }
+      .card {
+        background: #212124; border: 1px solid #2e2f34; border-radius: 14px;
+        padding: 18px; width: 100%; max-width: 360px; margin-bottom: 14px;
+      }
+      .qr-wrap { width: 220px; height: 220px; border-radius: 12px; background: #fff; display: flex; }
+      .qr-wrap img { width: 100%; height: 100%; }
+      .scan { font-size: 12px; color: #9ca3af; margin-bottom: 14px; text-align: center; }
+      button.open {
+        display: block; width: 100%; padding: 14px; border: 0; border-radius: 12px;
+        background: #7c6af7; color: #fff; font-size: 16px; font-weight: 700; cursor: pointer;
+      }
+      .step { display: flex; gap: 10px; align-items: flex-start; margin-top: 12px; }
+      .num {
+        min-width: 26px; height: 26px; border-radius: 8px; background: #2d2e36;
+        color: #b4b7c6; display: flex; align-items: center; justify-content: center; font-size: 13px;
+      }
+      .step p { margin: 0; font-size: 13.5px; line-height: 1.45; color: #dcdce4; }
+      .step b { color: #fff; }
+      .step code {
+        background: #26262a; border: 1px solid #34353c; color: #c6c3dc;
+        padding: 1px 7px; border-radius: 6px; font-size: 12px; font-family: ui-monospace, monospace;
+      }
+      .os { color: #8e8ea0; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+      .bar { height: 1px; background: #2e2f34; border: 0; margin: 0 0 8px; }
+    </style>
+  </head>
+  <body>
+    <div class="logo">⚡</div>
+    <h1>Install DisciplineAI on your phone</h1>
+    <p class="sub">One scan, one tap — no app store, no downloads to manage.</p>
+
+    <div class="card">
+      <div style="display:flex; justify-content:center; margin-bottom:12px;">
+        <div class="qr-wrap"><img src="./qr-app.png" alt="QR code — scan to open DisciplineAI on your phone" /></div>
+      </div>
+      <p class="scan">👉 Scan this QR with your phone camera (or with Google Lens),<br />then follow the steps below for your phone.</p>
+      <button class="open" id="open-app" type="button">Open DisciplineAI</button>
+    </div>
+
+    <div class="card">
+      <div class="os">📱 Android · Chrome</div>
+      <hr class="bar" />
+      <div class="step"><div class="num">1</div><p>Open the app above (scan QR or tap <b>Open DisciplineAI</b>).</p></div>
+      <div class="step"><div class="num">2</div><p>Tap the <b>⋮ menu</b> (three dots, top-right) → <b>Install app</b>.</p></div>
+      <div class="step"><div class="num">3</div><p>Tap <b>Install</b>. Done — the ⚡ <b>DisciplineAI</b> icon is added to your home screen and app drawer, like a real app.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="os">📱 iPhone / iPad · Safari</div>
+      <hr class="bar" />
+      <div class="step"><div class="num">1</div><p>Open the app above (scan QR or tap <b>Open DisciplineAI</b>).</p></div>
+      <div class="step"><div class="num">2</div><p>Tap <b>Share</b> (the curved arrow at the bottom of Safari).</p></div>
+      <div class="step"><div class="num">3</div><p>Tap <b>Add to Home Screen</b> → <b>Add</b>. The ⚡ icon lands on your home screen — tap it anytime to open the app full-screen.</p></div>
+    </div>
+
+    <div class="card">
+      <div class="os">ℹ️ Notes</div>
+      <hr class="bar" />
+      <div class="step" style="margin-top:6px;"><div class="num">i</div><p>
+        All your data (tasks, streaks, coach chat) stays in <b>this phone's browser</b> — nothing is uploaded.
+        It works <b>offline</b> too after the first visit. Want the same data on your computer? Each device keeps its own copy.
+      </p></div>
+    </div>
+
+    <script>
+      document.getElementById('open-app').addEventListener('click', () => {
+        location.href = '../';
+      });
+    </script>
+  </body>
+</html>
