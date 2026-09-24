@@ -159,8 +159,11 @@ jobs:
           VERSION="${TAG#v}"
           gh release create "${TAG}" \
             --title "DisciplineAI ${VERSION}" \
-            --notes "One-click desktop installers for Windows, macOS and Linux." \
+            --notes "One-click desktop installers (Windows, macOS, Linux) + Android APK." \
             || true
-          gh release upload "${TAG}" artifacts/* --clobber || true
+          # Upload every artifact file (recursively) to the release.
+          while IFS= read -r f; do
+            gh release upload "${TAG}" "$f" --clobber || true
+          done < <(find artifacts -type f \( -name '*.exe' -o -name '*.dmg' -o -name '*.AppImage' -o -name '*.apk' -o -name '*.zip' \))
           echo "=== Release assets for ${TAG} ==="
           gh release view "${TAG}" --json assets -q '.assets[].name'
