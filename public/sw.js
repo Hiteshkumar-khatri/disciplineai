@@ -2,7 +2,7 @@
 // - Caches hashed build assets (/assets/*) cache-first (fast, offline-friendly)
 // - Network-first for everything else (index.html etc.) so updates are always fresh
 // - Falls back to the cached copy when offline so the app still starts
-const CACHE = 'disciplineai-v1';
+const CACHE = 'disciplineai-v2';
 
 self.addEventListener('install', () => {
   self.skipWaiting();

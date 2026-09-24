@@ -2,28 +2,34 @@
   "name": "DisciplineAI — Daily Discipline Tracker",
   "short_name": "DisciplineAI",
   "description": "AI-powered daily discipline tracker with accountability coaching, streak heatmaps, and performance analytics.",
-  "id": "./",
-  "start_url": "./",
-  "scope": "./",
+  "id": "/disciplineai/",
+  "start_url": "/disciplineai/",
+  "scope": "/disciplineai/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#171717",
   "theme_color": "#7c6af7",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "./icon-192.png?v=2",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icon-512.png",
+      "src": "./icon-256.png?v=2",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png?v=2",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icon-512.png",
+      "src": "./icon-512.png?v=2",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
